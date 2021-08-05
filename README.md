@@ -7,6 +7,6 @@
 
 
 2. Using Maven plugin
-
+ 
     run the command
     `mvn spring-boot:run`

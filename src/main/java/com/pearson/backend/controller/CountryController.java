@@ -1,7 +1,6 @@
 package com.pearson.backend.controller;
 
 import com.pearson.backend.model.Country;
-import com.pearson.backend.repository.CountryRepository;
 import com.pearson.backend.service.CountryService;
 import lombok.AllArgsConstructor;
 import org.springframework.hateoas.EntityModel;

@@ -17,7 +17,9 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Country create(Country country) {
-        return countryRepository.save(country);
+        if(!countryRepository.existsByName(country.getName()))
+            return countryRepository.save(country);
+        throw new ResponseStatusException(HttpStatus.FOUND);
     }
 
     @Override

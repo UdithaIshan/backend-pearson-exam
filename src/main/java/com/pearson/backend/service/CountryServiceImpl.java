@@ -19,7 +19,7 @@ public class CountryServiceImpl implements CountryService {
     public Country create(Country country) {
         if(!countryRepository.existsByName(country.getName()))
             return countryRepository.save(country);
-        throw new ResponseStatusException(HttpStatus.FOUND);
+        throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "Already exists the country.");
     }
 
     @Override

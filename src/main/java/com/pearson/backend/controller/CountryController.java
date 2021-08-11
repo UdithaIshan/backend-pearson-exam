@@ -4,6 +4,7 @@ import com.pearson.backend.model.Country;
 import com.pearson.backend.service.CountryService;
 import lombok.AllArgsConstructor;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +39,7 @@ public class CountryController {
 
     @PostMapping("/countries")
     public ResponseEntity<Country> create(@Valid @RequestBody Country country) {
-        return ResponseEntity.ok().body(countryService.create(country));
+        return ResponseEntity.status(HttpStatus.CREATED).body(countryService.create(country));
     }
 
     @PutMapping("/countries/{id}")
